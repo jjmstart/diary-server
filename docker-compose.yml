@@ -1,6 +1,6 @@
 services:
   diary:
-    image: neosmemo/memos:0.26
+    image: neosmemo/memos:stable
     container_name: diary-server
     ports:
       - "127.0.0.1:5230:5230"
