@@ -1,0 +1,18 @@
+services:
+  diary:
+    image: neosmemo/memos:0.26
+    container_name: diary-server
+    ports:
+      - "127.0.0.1:5230:5230"
+    volumes:
+      - /var/lib/memos:/var/opt/memos
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    logging: 
+      driver: "json-file"
+      options: 
+        max-size: "10m"
+        max-file: "3"
